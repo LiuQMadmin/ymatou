@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>洋码头-购在全球,更多洋货 海外购_海外购物网_正品保障_海外直邮_正品低价</title>
+    <meta name="keywords" content="洋码头_海外购_海外购物网_正品保障_海外直邮_正品低价_海外代购、淘国外、海淘网站、海淘哪个好 、跨境电商 、黑五血拼、现金券" />
+    <meta name="description" content="洋码头，国内首家一站式海外购物平台，同步国外当地价格和折扣，100%海外正品，本土退货+本土客服保障售后无忧。自建官方国际物流，17大国际物流中心覆盖美国、欧洲、澳洲、日韩等地，海外直邮平均5天到货。全球83国3万余名认证买手帮你挑选国外好货。" />
+    <link href="../css/wharf.css" rel="stylesheet" type="text/css">
+	
+      <link href="../css/home.css" rel="stylesheet" type="text/css" />
+	  <link href="../css/common.css" rel="stylesheet" type="text/css" />
+	  <!-- <script src="../static/require/require.js" data-main="../js/template.js"></script> -->
+</head>
+<script src="../static/javascript/jquery-2.0.3.js"></script>
+<script src="../js/template.js"></script>
+<script id="res" type="text/html" >
+	<%for(var i=0;i<list.length;i++){%>
+	<li class="product-item">
+			<a sub_module_name="product_card" title="" href="http://localhost:9999/html/detail.html" module_index="" target="_blank" class="product-img">
+			<img class="lazy" src="<%=list[i].MainPic%>" alt="">	
+		</a>
+		<a href="http://localhost:9999/html/detail.html" target="_blank" title=""><p class="name lineClamp2"><%=list[i].Title%></p></a>
+		<p class="price"><em class="unit">¥</em><%=list[i].MinPrice%></p>
+	</li>
+<%}%>
+</script>
+<script id="fenlei" type="text/html" >
+	
+			<div class="cw-item" sub_module_name="big_list" module_name="content" module_index="" category_id="16">
+					<a href="http://localhost:9999/html/detail.html" title="" target="_blank">
+						<h3 class="cw-title"><span target="_blank"><%=list.title%><em class="header-icon"></em></span></h3>
+						<div class="cw-subtitle">
+								<span><%=list.subTitle[0]%></span>
+								<span><%=list.subTitle[1]%></span>
+								<span><%=list.subTitle[2]%></span>
+						</div>
+						<span class="cw-img"><img src="<%=list.pic%>" alt="护肤"></span>
+					</a>
+				</div>
+
+</script>
+<script id="tishi" type="text/html" >
+	<dd><a href="http://localhost:9999/html/detail.html" title=""><%=list.Keyword%></a></dd>
+</script>
+<script>
+	
+	onload=function(){
+		// 这里是分类的jsonp数据的加载函数
+		xianshi($);
+	// 这里是倒计时的函数
+		getTime()
+		// 这里是显示图标的
+		tupian()
+		// 轮播图的函数
+		lunbo();
+		// 这里是提示框的内容的函数
+		shuru($);
+		// 这个是显示用户名的代码
+		denglu();
+		// 这里是加载的js代码
+			let xhr=new XMLHttpRequest();
+			
+				xhr.open("get","../static/json/bimai.json");
+				
+                xhr.onload=function(){
+					
+                    let list=JSON.parse(xhr.response);
+                  
+					let templi=template("res",list)
+                    let tempul=document.getElementById("asd");
+					
+                    tempul.innerHTML +=templi;
+                }
+                // 对ajax进行发送
+                xhr.send();
+		//}
+		let btn=document.getElementById("btn");
+		btn.onclick=function(){
+			//for(var i=0;i<10;i++){
+			let xhr=new XMLHttpRequest();
+                xhr.open("get","../static/json/bimai.json");
+                xhr.onload=function(){
+                    let list=JSON.parse(xhr.response);
+                   
+					let templi=template("res",list)
+                    let tempul=document.getElementById("asd");
+					
+                    tempul.innerHTML +=templi;
+                }
+                // 对ajax进行发送
+                xhr.send();
+		}
+		//}
+	}
+
+
+</script>
+<body>
+<div id="topbar" class="topbar global-wrap originTopbar">
+	<div class="inner">
+		<div class="topnar-fl">
+			Hi，欢迎来到洋码头！
+		</div>
+		<ul class="nav topbar-fr">
+			<li class="nav-item">
+				<a href="http://localhost:9999/html/login.html"  target=""><span id="login" class="title">登录</span></a>
+			</li>
+			<li class="nav-item">
+				<a href="http://localhost:9999/html/register.html"><span class="title">注册</span></a>
+			</li>
+			<li class="nav-item">
+				<a href=""><span class="title">购物车</span></a>
+			</li>
+			<li class="nav-item">
+				<a href=""><span class="title">我的订单</span></a>
+			</li>
+			<li class="nav-item">
+				<a href=""  class="downmenu"><span class="title">个人中心</span><!--<i class="arrow-bt"></i>--></a>
+			</li>
+			<li class="nav-item">
+				<a href="//www.ymatou.com/home/rule" class="downmenu"><span class="title">规则&公告</span>
+			</li>
+			<li class="nav-item">
+				<a href="//help.ymatou.com/index.html"><span class="title">帮助中心</span></a>
+			</li>
+		</ul>
+	</div>
+</div><div class="header global-wrap">
+    <div class="inner">
+        <div class="header-search clearfix">
+            <h1 class="logo"><a href="http://www.ymatou.com" target="_blank" title="首页"></a></h1>
+            <form class="search-wrap J_wrap-search" action="//www.ymatou.com/products">
+                <input class="input-search J_input-search" name="k" value ="">
+				
+				<div class="search-recomend" id="search-recomend" style="display: none;">
+                    <!--<dl>
+                        <dt>最近搜索<i class="dust-btn"></i></dt>
+                        <dd>RMK</dd>
+                    </dl>-->
+                <dl data-total="30" id="sousuo">
+		<dt>大家都在搜</dt>
+	<!-- 这里有多个数据可以添加 -->
+       
+				</dl>
+
+
+
+				</div>
+
+
+
+
+                <button class="header-icon search-btn J_btn-search" type="submit"></button>
+            </form>
+            <div class="qrapp"></div>
+        </div>
+        <div style="width: 100%;height: 1px;overflow: hidden"></div>
+        <div class="menu-nav">
+            <a href="" class="menu-item" id="index-tab" title="首页">首页</a>
+            <a href="" id="todaybuy-bt" class="menu-item" title="今日限时抢">今日限时抢</a>
+            <a href="" id="ymt-bt" class="menu-item" title="洋货集">洋货集</a>
+            <a href="" id="categoryMenu" title="分类" class="menu-item">分类 <i class="c-down"></i></a>
+            <div class="category-box" style="opacity: 0;">
+                <div class="category-downlist" style="visibility:hidden;">
+                    <div class="category-wrap" id="wrapabc">
+
+
+
+                    	<div class="cw-item" sub_module_name="big_list" module_name="content" module_index="" category_id="16">
+		<a href="//www.ymatou.com/products/fc_1_16/%E6%8A%A4%E8%82%A4" title="护肤" target="_blank">
+		    <h3 class="cw-title"><span target="_blank">护肤<em class="header-icon"></em></span></h3>
+		    <div class="cw-subtitle">
+		            <span>面膜</span>
+		            <span>水乳</span>
+		            <span>防晒隔离</span>
+		    </div>
+		    <span class="cw-img"><img src="http://pic1.ymatou.com/G02/M0B/0B/61/CgvUBFlE_l-AFtC7AAMyS71u0oU066_1_1_o.gif" alt="护肤"></span>
+	    </a>
+						</div>
+	
+
+
+
+
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  <meta pagetype="pc_home">
+<div class="home-banners">
+	<div class="sb-bd focus-images" id="SideBanners">
+		<ul class="images" module_name="banner"> 
+            <li class="item slider-panel"  module_index bannerid="" style="background-color:#F13454" >
+                <div class="area">
+                    <a  target="_blank" href=""  title="">
+                        <img class="img" id="overimg" src="http://pic1.ymatou.com/G02/M08/7A/E5/CgvUBVt_uq2AAQvbAAE47XDOiL4621_3_1_o.png"  alt="">
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <div class="wy-slide-nav">
+                <span class="focusitem slider-item"></span>
+	    </div>
+        <div class="slider-page" style="f: none;">
+            <span class="swith-btn swith-btn-prev slider-pre"><i class="home-icon hi-prev"></i></span>
+            <span class="swith-btn swith-btn-next slider-next"><i class="home-icon hi-next"></i></span>
+        </div>
+	</div>
+	<div class="sb-ft">
+		<div class="inner">
+			<span class="item"><i class="zhengpin-icon zhengpin1"></i><span class="title">海外正品</span></span>
+			<span class="item"><i class="zhengpin-icon zhengpin4"></i><span class="title">严格监管</span></span>
+			<span class="item"><i class="zhengpin-icon zhengpin2"></i><span class="title">买手认证</span></span>
+			<span class="item"><i class="zhengpin-icon zhengpin3"></i><span class="title">售后无忧</span></span>
+		</div>
+	</div>
+</div>
+
+<div class="mainer global-wrap">
+	<div class="inner">
+		<!-- 限时抢 -->
+		<div class="mod mod-today-buying" id="flashSale" module_name="xianshiqiang">
+		<!-- 今日限时抢Begin -->
+		
+		    <div class="mod-hd">
+		        <i class="home-icon hi-todaybuy"></i><span class="title">今日限时抢</span>
+		        <a href="//www.ymatou.com/home/todaybuy" target="_blank" class="more" sub_module_name="more" title="更多" module_index >更多<i class="home-icon hi-more"></i></a>
+		    </div>
+		    <div class="mod-bd">
+		        <div class="today-buying-wrap" id="SlideContainer">
+					<span id="qian" class="swith-btn swith-btn-prev"><i class="home-icon hi-prev"></i></span>
+		            <span id="hou" class="swith-btn swith-btn-next"><i class="home-icon hi-next"></i></span>
+		            <ul class="swith-today-banner">
+		                <li sub_module_name="sale_card" module_index activity_id="19480377-17ec-4e83-ad9c-221d7ea64eba" class="swith-img swith-img-prev" data-id="0"><a href="http://localhost:9999/html/detail.html" target="_blank"><img src="../static/picture/cgzudfzkxcwaqgw4aafj_8aa6dm35_49_24_o.jpeg" alt="STYLE UP骨盆紧身裤骨盆矫正产后恢复收腹收胯提臀 高腰/中腰"></a></li>
+		                <li sub_module_name="sale_card" module_index activity_id="5d77dcf8-2b6e-4086-9f99-c64305950f3f" class="swith-img swith-img-active" data-id="1"><a href="http://localhost:9999/html/detail.html"><img src="http://pic1.ymatou.com/G02/M06/1E/E0/CgzUC1zmlZuAVIVVAAGrvN_eX7M47_49_24_o.jpeg?OldUrl=http%3a%2f%2fpic1.ymatou.com%2fG02%2fM06%2f1E%2fE0%2fCgzUC1zmlZuAMPDtAAGtndaXtqI05_259_120_o.jpeg" alt="Diesel迪赛手表男 炫酷偏光大表盘潮流计时商务休闲石英男表 "></a></li>
+		                <li sub_module_name="sale_card" module_index activity_id="04ac4860-f4f7-4732-8fa1-2fb0beb13eac" class="swith-img swith-img-next" data-id="2"><a href="http://localhost:9999/html/detail.html" target="_blank"><img src="../static/picture/cgzuc1zlecyanxlcaaigjo368ke45_49_24_o.jpeg" alt="Diesel迪赛手表男 炫酷偏光大表盘潮流计时商务休闲石英男表 "></a></li>
+		                <li sub_module_name="sale_card" module_index activity_id="102a2e20-eea8-4643-bbf2-81a7bf2db933" class="swith-img swith-img-" data-id="3"><a href="http://localhost:9999/html/detail.html" target="_blank"><img src="../static/picture/cgzuclzj3o-aq2vvaaeaivtpnts17_49_24_o.jpeg" alt="DW 新品DanielWellington女生手表 32mm手表女 潮流简约风向标"></a></li>
+		                <li sub_module_name="sale_card" module_index activity_id="21ae450a-2db2-426c-8824-a9b70b137c76" class="swith-img swith-img-" data-id="4"><a href="http://localhost:9999/html/detail.html" title="PAVOI美国潮牌Ins火爆14K镀金锆石十二星座守护项链锁骨链女礼盒" target="_blank"><img src="../static/picture/cgzuclzljayaxriqaaf4k-drcxo83_49_24_o.jpeg" alt=""></a></li>
+		                <li sub_module_name="sale_card" module_index activity_id="338e74e3-5259-4e4d-b663-ea1868bb0262" class="swith-img swith-img-" data-id="5"><a href="http://localhost:9999/html/detail.html" title="特价 新款 DK UGG女鞋 DK618丝光小羊皮Daisie珍珠低跟 单鞋" target="_blank"><img src="../static/picture/cgzudfzk9syazieqaag5kqbbchc25_49_24_o.jpeg" alt=""></a></li>
+		                <li sub_module_name="sale_card" module_index activity_id="3d38ef4f-c11e-4432-89b5-597b5492603f" class="swith-img swith-img-" data-id="6"><a href="http://localhost:9999/html/detail.html" title="the ordinary烟酰胺面部精华液**眼部精华去黑眼圈眼袋" target="_blank"><img src="../static/picture/cgzuc1yt7hqayrfeaagf3-1x2qu06_49_24_o.jpeg" alt=""></a></li>
+		                <li sub_module_name="sale_card" module_index activity_id="686bc6e8-97a4-4bce-b93a-05f9474f669b" class="swith-img swith-img-" data-id="7"><a href="http://localhost:9999/html/detail.html" title="璎珞同款 新版POLA黑BA眼霜小样0.26g*20片 保湿抗皱去黑眼圈 " target="_blank"><img src="../static/picture/cgzudfzlc1wad5udaad6quhyjre80_49_24_o.jpeg" alt=""></a></li>
+		                <li sub_module_name="sale_card" module_index activity_id="699748c3-7100-4495-bfa3-d142ac5052df" class="swith-img swith-img-" data-id="8"><a href="http://localhost:9999/html/detail.html" title="日本万能膏 皮疹湿疹红pp 安全无激素 成人新生儿孕妇可放心使用" target="_blank"><img src="../static/picture/cgzuc1zlrzcaxeylaaedbpgggeq55_49_24_o.jpeg" alt="日本万能膏 皮疹湿疹红pp 安全无激素 成人新生儿孕妇可放心使用"></a></li>
+		                
+		            </ul>
+		            <div class="gray"></div>
+		        </div>
+		            <div class="timeout-wrap" data-seconds = 8139>
+		                <span class="title"><i class="home-icon hi-timeout"></i>距离结束</span>
+		                <span class="time hours"></span>
+		                <span class="txt">:</span>
+		                <span class="time minutes"></span>
+		                <span class="txt">:</span>
+		                <span class="time seconds"></span>
+		            </div>
+		    </div>
+		<!-- 今日限时抢End -->		</div>
+
+		<!-- 全球必买清单 -->
+		<div class="mod mod-global-must-buy" module_name="special_topic_list">
+				<div class="mod-hd">
+					<i class="home-icon hi-must-buy"></i><span class="title">全球必买清单</span>
+					<a href="//www.ymatou.com/home/mustBuy" class="more" target="_blank" sub_module_name="more" module_index="" title="更多">更多<i class="home-icon hi-more"></i></a>
+				</div>
+
+				<div class="mod-bd">
+				<ul class="must-buy-list">   
+
+						<li class="item" data-topicid="1004829" module_index="">
+								<a title="只需十分钟，教你化个心机妆" href="//www.ymatou.com/home/topicInfo/1004829" target="_blank" _target="banner" subject_id="1004829">
+								<div class="mb-l must-buy-bg1">
+									<div class="mbl-fill">
+										<div class="fill">只需十分钟，教你化个心机妆</div>
+										<div class="desc">
+											<span class="seller">来自 34 位买手</span>
+											<span>52 件商品</span>
+										</div>
+									</div>
+								</div>
+								</a>
+								<div class="mb-r">
+									<ul class="product-list">
+										<li class="product-item" _target="product" sproductid="f2dda7ce-3169-4c1d-9e7d-f90dfd0af13b" subject_id="1004829">
+											<a title="日本资生堂六角眉笔不脱色防水防汗不晕染初学者灰色画眉眉笔" href="http://localhost:9999/html/detail.html" target="_blank" class="product-img">
+												<img alt="日本资生堂六角眉笔不脱色防水防汗不晕染初学者灰色画眉眉笔" class="lazy" src="http://pic1.ymatou.com/G02/shangou/M08/1A/71/CgvUA1wHa9eAZ2-QAAEu_4L9aso340_1_1_n_w_l.jpg">
+											</a>
+											<a href="http://localhost:9999/html/detail.html" target="_blank" title="日本资生堂六角眉笔不脱色防水防汗不晕染初学者灰色画眉眉笔">
+												<p class="name lineClamp2">日本资生堂六角眉笔不脱色防水防汗不晕染初学者灰色画眉眉笔</p>
+											</a>
+											<p class="price"><em class="unit">¥</em>29</p>
+											<p class="country"><span class="country-sign"><img src="http://img.ymatou.com/app/flag/circle/Japan.png" alt="日本"></span><span class="country-name">日本</span></p>
+										</li>
+										<li class="product-item" _target="product" sproductid="7e2cacb6-aa83-4b21-8076-54ae244f7f54" subject_id="1004829">
+											<a title="韩国爱丽小屋 Face Blur 隐形毛孔妆前乳 保湿提亮液SPF33/PA++" href="http://localhost:9999/html/detail.html" target="_blank" class="product-img">
+												<img alt="韩国爱丽小屋 Face Blur 隐形毛孔妆前乳 保湿提亮液SPF33/PA++" class="lazy" src="http://pic1.ymatou.com/G02/shangou/M01/48/95/CgvUBFkStYWADXGsAALn4_UYLMM085_1_1_n_w_l.jpg">
+											</a>
+											<a href="http://localhost:9999/html/detail.html" target="_blank" title="韩国爱丽小屋 Face Blur 隐形毛孔妆前乳 保湿提亮液SPF33/PA++">
+												<p class="name lineClamp2">韩国爱丽小屋 Face Blur 隐形毛孔妆前乳 保湿提亮液SPF33/PA++</p>
+											</a>
+											<p class="price"><em class="unit">¥</em>66</p>
+											<p class="country"><span class="country-sign"><img src="http://img.ymatou.com/app/flag/circle/Korea.png" alt="韩国"></span><span class="country-name">韩国</span></p>
+										</li>
+										<li class="product-item" _target="product" sproductid="6bfebba6-89f0-4ec8-b2f1-4e9d4c41dab2" subject_id="1004829">
+											<a title="日本 Shiseido资生堂 六角眉笔 防水防汗不晕染 好用的平价眉笔" href="http://localhost:9999/html/detail.html" target="_blank" class="product-img">
+												<img alt="日本 Shiseido资生堂 六角眉笔 防水防汗不晕染 好用的平价眉笔" class="lazy" src="http://pic1.ymatou.com/G02/shangou/M05/44/61/CgvUA1h8gd6Acnj1AAKnWn5aVKw164_1_1_n_w_l.jpg">
+											</a>
+											<a href="http://localhost:9999/html/detail.html" target="_blank" title="日本 Shiseido资生堂 六角眉笔 防水防汗不晕染 好用的平价眉笔">
+												<p class="name lineClamp2">日本 Shiseido资生堂 六角眉笔 防水防汗不晕染 好用的平价眉笔</p>
+											</a>
+											<p class="price"><em class="unit">¥</em>25</p>
+											<p class="country"><span class="country-sign"><img src="http://img.ymatou.com/app/flag/circle/Japan.png" alt="日本"></span><span class="country-name">日本</span></p>
+										</li>
+										<li class="product-item" _target="product" sproductid="2dd02d34-aee7-4c84-973c-f23c73cfdd1f" subject_id="1004829">
+											<a title="Innisfree悦诗风吟眉笔 双头持久防水防汗带眉刷 二支" href="http://localhost:9999/html/detail.html" target="_blank" class="product-img">
+												<img alt="Innisfree悦诗风吟眉笔 双头持久防水防汗带眉刷 二支" class="lazy" src="http://pic1.ymatou.com/G02/shangou/M09/FE/D5/CgvUA1lnO2CAVypaAAeEtWLTU7U657_1_1_n_w_l.jpg">
+											</a>
+											<a href="http://localhost:9999/html/detail.html" target="_blank" title="Innisfree悦诗风吟眉笔 双头持久防水防汗带眉刷 二支">
+												<p class="name lineClamp2">Innisfree悦诗风吟眉笔 双头持久防水防汗带眉刷 二支</p>
+											</a>
+											<p class="price"><em class="unit">¥</em>58</p>
+											<p class="country"><span class="country-sign"><img src="http://img.ymatou.com/app/flag/circle/Korea.png" alt="韩国"></span><span class="country-name">韩国</span></p>
+										</li>
+									</ul>
+								</div>
+						</li>
+	
+	
+	
+						<li class="item" data-topicid="1004827" module_index="">
+								<a title="眼影|魅力电眼的必备之选" href="http://localhost:9999/html/detail.html" target="_blank" _target="banner" subject_id="1004827">
+								<div class="mb-l must-buy-bg2">
+									<div class="mbl-fill">
+										<div class="fill">眼影|魅力电眼的必备之选</div>
+										<div class="desc">
+											<span class="seller">来自 44 位买手</span>
+											<span>72 件商品</span>
+										</div>
+									</div>
+								</div>
+								</a>
+								<div class="mb-r">
+									<ul class="product-list">
+										<li class="product-item" _target="product" sproductid="b8b61261-5c88-449c-9eee-2c2639726d78" subject_id="1004827">
+											<a title="Innisfree悦诗风吟 自动防水眼线笔眼影笔初学者持久" href="http://localhost:9999/html/detail.html" target="_blank" class="product-img">
+												<img alt="Innisfree悦诗风吟 自动防水眼线笔眼影笔初学者持久" class="lazy" src="http://pic1.ymatou.com/G02/shangou/M04/1B/1F/CgvUBVjrNpqAIIzLAAHxp3L4Zg4239_1_1_n_w_l.jpg">
+											</a>
+											<a href="//www.ymatou.com/product/b8b61261-5c88-449c-9eee-2c2639726d78.html" target="_blank" title="Innisfree悦诗风吟 自动防水眼线笔眼影笔初学者持久">
+												<p class="name lineClamp2">Innisfree悦诗风吟 自动防水眼线笔眼影笔初学者持久</p>
+											</a>
+											<p class="price"><em class="unit">¥</em>29</p>
+											<p class="country"><span class="country-sign"><img src="http://img.ymatou.com/app/flag/circle/Korea.png" alt="韩国"></span><span class="country-name">韩国</span></p>
+										</li>
+										<li class="product-item" _target="product" sproductid="912222bc-e24e-4591-a766-461a4a865d31" subject_id="1004827">
+											<a title="【两支装】爱丽小屋Etude House 眼影笔 卧蚕笔 " href="http://localhost:9999/html/detail.html" target="_blank" class="product-img">
+												<img alt="【两支装】爱丽小屋Etude House 眼影笔 卧蚕笔 " class="lazy" src="http://pic1.ymatou.com/G02/shangou/M05/5C/12/CgvUBFivoFSAbuWSAAG5Ttutc_c073_1_1_n_w_l.jpg">
+											</a>
+											<a href="//www.ymatou.com/product/912222bc-e24e-4591-a766-461a4a865d31.html" target="_blank" title="【两支装】爱丽小屋Etude House 眼影笔 卧蚕笔 ">
+												<p class="name lineClamp2">【两支装】爱丽小屋Etude House 眼影笔 卧蚕笔 </p>
+											</a>
+											<p class="price"><em class="unit">¥</em>59</p>
+											<p class="country"><span class="country-sign"><img src="http://img.ymatou.com/app/flag/circle/Korea.png" alt="韩国"></span><span class="country-name">韩国</span></p>
+										</li>
+										<li class="product-item" _target="product" sproductid="34e59c66-b195-4052-8be4-280e1d377504" subject_id="1004827">
+											<a title="pony effect便携式化妆刷金杆迷你套刷散粉刷修容刷眼影刷" href="http://localhost:9999/html/detail.html" target="_blank" class="product-img">
+												<img alt="pony effect便携式化妆刷金杆迷你套刷散粉刷修容刷眼影刷" class="lazy" src="http://pic1.ymatou.com/G02/shangou/M03/65/ED/CgvUA1pM4AeARVc_AAOEcUhyfnY808_3_4_n_w_l.jpg">
+											</a>
+											<a href="//www.ymatou.com/product/34e59c66-b195-4052-8be4-280e1d377504.html" target="_blank" title="pony effect便携式化妆刷金杆迷你套刷散粉刷修容刷眼影刷">
+												<p class="name lineClamp2">pony effect便携式化妆刷金杆迷你套刷散粉刷修容刷眼影刷</p>
+											</a>
+											<p class="price"><em class="unit">¥</em>188</p>
+											<p class="country"><span class="country-sign"><img src="http://img.ymatou.com/app/flag/circle/Korea.png" alt="韩国"></span><span class="country-name">韩国</span></p>
+										</li>
+										<li class="product-item" _target="product" sproductid="ce7b2476-dffe-4fa9-b11b-2069e18412b6" subject_id="1004827">
+											<a title=" 韩国Etude 爱丽小屋 10倍 防水自动眼线笔 新款 不晕染眼线胶笔" href="http://localhost:9999/html/detail.html" target="_blank" class="product-img">
+												<img alt=" 韩国Etude 爱丽小屋 10倍 防水自动眼线笔 新款 不晕染眼线胶笔" class="lazy" src="http://pic1.ymatou.com/G02/shangou/M00/5C/80/CgvUA1gqvveAInTmAAJLseoCU8E222_1_1_n_w_l.jpg">
+											</a>
+											<a href="//www.ymatou.com/product/ce7b2476-dffe-4fa9-b11b-2069e18412b6.html" target="_blank" title=" 韩国Etude 爱丽小屋 10倍 防水自动眼线笔 新款 不晕染眼线胶笔">
+												<p class="name lineClamp2"> 韩国Etude 爱丽小屋 10倍 防水自动眼线笔 新款 不晕染眼线胶笔</p>
+											</a>
+											<p class="price"><em class="unit">¥</em>39</p>
+											<p class="country"><span class="country-sign"><img src="http://img.ymatou.com/app/flag/circle/Korea.png" alt="韩国"></span><span class="country-name">韩国</span></p>
+										</li>
+									</ul>
+								</div>
+						</li>
+
+
+
+
+				</ul>
+
+
+
+
+
+
+
+				</div>
+			</div>
+		<!-- 洋货集 -->
+	
+		<!-- 分类 -->
+		<div class="mod mod-category" module_name="classification_index">
+			<div class="mod-hd">
+		
+				<i class="home-icon hi-category"></i><span class="title">分类</span>
+				<a href="//www.ymatou.com/home/cabs" class="more" target="_blank" sub_module_name="more" module_index title="更多">更多<i class="home-icon hi-more"></i></a>
+			</div>
+			<div class="mod-bd">
+				<div class="category-banner" sub_module_name="edit_list">
+					<div class="cb-item"><a href="http://localhost:9999/html/detail.html" module_index category_id="13" target="_blank" data-type="1" data-categoryId="13" title="大牌包包"><img src="http://pic1.ymatou.com/G02/M0B/EC/41/CgvUA1lk31GAIpF4AABP6TDC4vk178_247_239_o.gif" alt="大牌包包"/><span>大牌包包</span></a></div>
+					<div class="cb-item"><a href="http://localhost:9999/html/detail.html" module_index category_id="14" target="_blank" data-type="1" data-categoryId="14" title="潮流服鞋"><img src="http://pic1.ymatou.com/G02/M0B/F3/19/CgvUBVlk3wuAHOWBAABGRlG4Cd4962_247_239_o.gif" alt="潮流服鞋"/><span>潮流服鞋</span></a></div>
+					<div class="cb-item"><a href="http://localhost:9999/html/detail.html" module_index category_id="15" target="_blank" data-type="1" data-categoryId="15" title="美颜护肤"><img src="http://pic1.ymatou.com/G02/M02/F3/2D/CgvUBVlk4Q2AbxSiAADt632ES9M636_461_486_o.gif" alt="美颜护肤"/><span>美颜护肤</span></a></div>
+				</div>
+				<!--分类 center-->
+				<div class="category-product" sub_module_name="theme_list_card">
+						<div class="cp-item">
+							<div class="cp-item-hd"><h3 class="title">包治百病</h3></div>
+							<div class="cp-item-bd">
+								<a module_index="" category_id="20" title="Tote包" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="20">
+									<p class="cp-img"><img alt="Tote包" class="lazy" src="http://pc1.img.ymatou.com/G02/M03/F3/B5/CgvUBVeawm2AaKxPAACQxTbTvJQ385_o.png"></p>
+									<p class="cp-name">Tote包</p>
+								</a>
+								<a module_index="" category_id="37" title="邮差包" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="37">
+									<p class="cp-img"><img alt="邮差包" class="lazy" src="http://pic1.ymatou.com/G02/M02/86/E9/CgvUBVhXUzmAShFhAAB7t5emqGs794_1_1_o.png"></p>
+									<p class="cp-name">邮差包</p>
+								</a>
+								<a module_index="" category_id="21" title="手提包" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="21">
+									<p class="cp-img"><img alt="手提包" class="lazy" src="http://pic1.ymatou.com/G02/M08/4B/04/CgvUA1h90A2AdmmIAABPN7rTRKI428_1_1_o.png"></p>
+									<p class="cp-name">手提包</p>
+								</a>
+								<a module_index="" category_id="34" title="Mini包" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="34">
+									<p class="cp-img"><img alt="Mini包" class="lazy" src="http://pc1.img.ymatou.com/G02/M07/F3/C4/CgvUBVeaw-mAGuwgAACfFeQK_oY352_o.png"></p>
+									<p class="cp-name">Mini包</p>
+								</a>
+								<a module_index="" category_id="36" title="钱包卡包" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="36">
+									<p class="cp-img"><img alt="钱包卡包" class="lazy" src="http://pic1.ymatou.com/G02/M08/77/0D/CgvUBFiFpuGAee6dAADY3GpjezQ591_1_1_o.jpg"></p>
+									<p class="cp-name">钱包卡包</p>
+								</a>
+							</div>
+						</div>
+						<div class="cp-item">
+							<div class="cp-item-hd"><h3 class="title">美鞋不嫌多</h3></div>
+							<div class="cp-item-bd">
+								<a module_index="" category_id="39" title="高跟鞋" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="39">
+									<p class="cp-img"><img alt="高跟鞋" class="lazy" src="http://pic1.ymatou.com/G02/M04/59/9E/CgvUA1iAaF-AZfTuAABX2z6VeJM922_1_1_o.png"></p>
+									<p class="cp-name">高跟鞋</p>
+								</a>
+								<a module_index="" category_id="41" title="小白鞋" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="41">
+									<p class="cp-img"><img alt="小白鞋" class="lazy" src="http://pic1.ymatou.com/G02/M08/59/9E/CgvUA1iAaFaASHFOAAA3qpolVbo674_1_1_o.png"></p>
+									<p class="cp-name">小白鞋</p>
+								</a>
+								<a module_index="" category_id="40" title="明星同款" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="40">
+									<p class="cp-img"><img alt="明星同款" class="lazy" src="http://pic1.ymatou.com/G02/M06/5F/89/CgvUBViAaG6AHbstAABMR50JmyM627_1_1_o.png"></p>
+									<p class="cp-name">明星同款</p>
+								</a>
+								<a module_index="" category_id="42" title="雪地靴" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="42">
+									<p class="cp-img"><img alt="雪地靴" class="lazy" src="http://pic1.ymatou.com/G02/M06/5F/89/CgvUBViAaGCAZ1b2AABs2e8dXlM271_1_1_o.png"></p>
+									<p class="cp-name">雪地靴</p>
+								</a>
+								<a module_index="" category_id="43" title="过膝靴" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="43">
+									<p class="cp-img"><img alt="过膝靴" class="lazy" src="http://pic1.ymatou.com/G02/M08/59/9E/CgvUA1iAaGmAfecjAAAxDvhbPA4497_1_1_o.png"></p>
+									<p class="cp-name">过膝靴</p>
+								</a>
+							</div>
+						</div>
+						<div class="cp-item">
+							<div class="cp-item-hd"><h3 class="title">护肤要积极</h3></div>
+							<div class="cp-item-bd">
+								<a module_index="" category_id="50" title="卸妆洁面" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="50">
+									<p class="cp-img"><img alt="卸妆洁面" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F4/7F/CgvUA1eax9OAcCuIAABSaVvPeEk096_o.png"></p>
+									<p class="cp-name">卸妆洁面</p>
+								</a>
+								<a module_index="" category_id="48" title="化妆水" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="48">
+									<p class="cp-img"><img alt="化妆水" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F3/F2/CgvUBVeax9aADhdsAAAwg2mcJq0504_o.png"></p>
+									<p class="cp-name">化妆水</p>
+								</a>
+								<a module_index="" category_id="51" title="精华液" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="51">
+									<p class="cp-img"><img alt="精华液" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F3/AE/CgvUBFeax9iAIdSuAABbM6frl-A470_o.png"></p>
+									<p class="cp-name">精华液</p>
+								</a>
+								<a module_index="" category_id="56" title="乳液" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="56">
+									<p class="cp-img"><img alt="乳液" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F3/B0/CgvUBFeayACAKRmAAACGLeknXsQ143_o.png"></p>
+									<p class="cp-name">乳液</p>
+								</a>
+								<a module_index="" category_id="55" title="面膜" href="http://localhost:9999/html/detail.html" target="_blank" class="cp-product" data-type="1" data-categoryid="55">
+									<p class="cp-img"><img alt="面膜" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F3/F5/CgvUBVeayAKASxtUAACaqlRGrsM967_o.png"></p>
+									<p class="cp-name">面膜</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				<!--分类-->
+				<!--right -->
+				<div class="category-topic" sub_module_name="theme_hot">
+					<div class="ct-hd"><h3 class="title">热门主题</h3></div>
+					<div class="ct-bd">
+					</div>
+				</div>
+				<!--right end-->
+				
+				<!--品牌list-->
+				<div class="brand-list" id="brandList" sub_module_name="brand_list">
+						<div class="bl-item">
+							<span class="bl-prev"><i class="home-icon hi-prev-small"></i></span>
+							<span class="bl-next"><i class="home-icon hi-next-small"></i></span>
+							<div class="bl-item-bd slide-content">
+			<div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10173" module_index="" brandid="10173" title="路易·威登">
+									<p class="bl-img"><img alt="路易·威登" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F5/8C/CgvUBVea9E2AF3arAABewzDfoeQ276_o.png"></p>
+									<p class="bl-name">路易·威登</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10098" module_index="" brandid="10098" title="香奈儿">
+									<p class="bl-img"><img alt="香奈儿" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F5/3D/CgvUBFea9FGAOy8PAAAJAjtQfzY428_o.png"></p>
+									<p class="bl-name">香奈儿</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10200" module_index="" brandid="10200" title="普拉达">
+									<p class="bl-img"><img alt="普拉达" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F5/8C/CgvUBVea9FWAXX2mAAAY1jEw40Q069_o.png"></p>
+									<p class="bl-name">普拉达</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="11506" module_index="" brandid="11506" title="克洛伊">
+									<p class="bl-img"><img alt="克洛伊" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F5/8C/CgvUBVea9FeAZtf6AAAbKV-PBQI693_o.png"></p>
+									<p class="bl-name">克洛伊</p>
+								</a>
+			</div><div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13255" module_index="" brandid="13255" title="芙拉">
+									<p class="bl-img"><img alt="芙拉" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F5/40/CgvUBFea9HyAYbg0AAAZnpSJeok763_o.png"></p>
+									<p class="bl-name">芙拉</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13194" module_index="" brandid="13194" title="赛琳">
+									<p class="bl-img"><img alt="赛琳" class="lazy" src="http://pc1.img.ymatou.com/G02/M02/F6/16/CgvUA1ea9H-ATlbFAAASkDImasI903_o.png"></p>
+									<p class="bl-name">赛琳</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10104" module_index="" brandid="10104" title="蔻驰">
+									<p class="bl-img"><img alt="蔻驰" class="lazy" src="http://pc1.img.ymatou.com/G02/M00/F5/46/CgvUBFea9M-ATuqSAAAYXHiGLug689_o.png"></p>
+									<p class="bl-name">蔻驰</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10178" module_index="" brandid="10178" title="迈克.高仕">
+									<p class="bl-img"><img alt="迈克.高仕" class="lazy" src="http://pc1.img.ymatou.com/G02/M00/F5/46/CgvUBFea9NOAXcndAAAPld4-VP4614_o.png"></p>
+									<p class="bl-name">迈克.高仕</p>
+								</a>
+			</div><div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10134" module_index="" brandid="10134" title="古驰">
+									<p class="bl-img"><img alt="古驰" class="lazy" src="http://pc1.img.ymatou.com/G02/M03/CC/F1/CgvUA1e6oDaAbbsPAAAQRKJSO7o580_o.png"></p>
+									<p class="bl-name">古驰</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="12631" module_index="" brandid="12631" title="汤丽柏琦">
+									<p class="bl-img"><img alt="汤丽柏琦" class="lazy" src="http://pc1.img.ymatou.com/G02/M0A/F6/22/CgvUA1ea9U2AK6fHAAAX2BE747s410_o.png"></p>
+									<p class="bl-name">汤丽柏琦</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10089" module_index="" brandid="10089" title="巴宝莉">
+									<p class="bl-img"><img alt="巴宝莉" class="lazy" src="http://pc1.img.ymatou.com/G02/M07/CC/F5/CgvUA1e6oQiABP8_AAAaFj_uKDk564_o.png"></p>
+									<p class="bl-name">巴宝莉</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10154" module_index="" brandid="10154" title="凯特•丝蓓">
+									<p class="bl-img"><img alt="凯特•丝蓓" class="lazy" src="http://pc1.img.ymatou.com/G02/M0A/F5/9B/CgvUBVea9UaAC6_tAAAh5va7L6U108_o.png"></p>
+									<p class="bl-name">凯特•丝蓓</p>
+								</a>
+			</div>				</div>
+							<div class="bl-item-ft">包包</div>
+						</div>
+						<div class="bl-item">
+							<span class="bl-prev"><i class="home-icon hi-prev-small"></i></span>
+							<span class="bl-next"><i class="home-icon hi-next-small"></i></span>
+							<div class="bl-item-bd slide-content">
+			<div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13594" module_index="" brandid="13594" title="sandro">
+									<p class="bl-img"><img alt="sandro" class="lazy" src="http://pc1.img.ymatou.com/G02/M09/CD/03/CgvUA1e6ohGALoZXAAAWqDtO4Wk334_o.png"></p>
+									<p class="bl-name">sandro</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10177" module_index="" brandid="10177" title="Max Mara">
+									<p class="bl-img"><img alt="Max Mara" class="lazy" src="http://pc1.img.ymatou.com/G02/M09/CC/96/CgvUBVe6oieAZ5_7AAAa6yEsx6s841_o.png"></p>
+									<p class="bl-name">Max Mara</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13596" module_index="" brandid="13596" title="maje">
+									<p class="bl-img"><img alt="maje" class="lazy" src="http://pc1.img.ymatou.com/G02/M01/CC/11/CgvUBFe6ojaADGgcAAAaPAsNDvA152_o.png"></p>
+									<p class="bl-name">maje</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10078" module_index="" brandid="10078" title="香蕉共和国">
+									<p class="bl-img"><img alt="香蕉共和国" class="lazy" src="http://pc1.img.ymatou.com/G02/M01/CC/12/CgvUBFe6ol2ATeFEAAAVvu0-RQM724_o.png"></p>
+									<p class="bl-name">香蕉共和国</p>
+								</a>
+			</div><div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="20521" module_index="" brandid="20521" title="浪凡">
+									<p class="bl-img"><img alt="浪凡" class="lazy" src="http://pc1.img.ymatou.com/G02/M0A/CC/FD/CgvUA1e6oaGAV7IcAAAgO6FYGso137_o.png"></p>
+									<p class="bl-name">浪凡</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10239" module_index="" brandid="10239" title="范思哲">
+									<p class="bl-img"><img alt="范思哲" class="lazy" src="http://pc1.img.ymatou.com/G02/M09/F5/8B/CgvUBFea-k-AAe6eAAAJ8-LYjx8286_o.png"></p>
+									<p class="bl-name">范思哲</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="20749" module_index="" brandid="20749" title="品高">
+									<p class="bl-img"><img alt="品高" class="lazy" src="http://pc1.img.ymatou.com/G02/M06/CC/1E/CgvUBFe6o0iADrxhAAAOKBjirQY507_o.png"></p>
+									<p class="bl-name">品高</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13305" module_index="" brandid="13305" title="asos">
+									<p class="bl-img"><img alt="asos" class="lazy" src="http://pc1.img.ymatou.com/G02/M06/CC/1F/CgvUBFe6o1mAHgXOAAAT_6fxdIY024_o.png"></p>
+									<p class="bl-name">asos</p>
+								</a>
+			</div>				</div>
+							<div class="bl-item-ft">裙装</div>
+						</div>
+						<div class="bl-item">
+							<span class="bl-prev"><i class="home-icon hi-prev-small"></i></span>
+							<span class="bl-next"><i class="home-icon hi-next-small"></i></span>
+							<div class="bl-item-bd slide-content">
+			<div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="14608" module_index="" brandid="14608" title="菲拉格慕">
+									<p class="bl-img"><img alt="菲拉格慕" class="lazy" src="http://pc1.img.ymatou.com/G02/M08/F5/B8/CgvUBVea9_CAHlQmAAALc1BGfRc023_o.png"></p>
+									<p class="bl-name">菲拉格慕</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13308" module_index="" brandid="13308" title="周仰杰">
+									<p class="bl-img"><img alt="周仰杰" class="lazy" src="http://pc1.img.ymatou.com/G02/M09/F5/71/CgvUBFea-EiAF01NAABmGd11-es483_o.png"></p>
+									<p class="bl-name">周仰杰</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10189" module_index="" brandid="10189" title="玖熙">
+									<p class="bl-img"><img alt="玖熙" class="lazy" src="http://pc1.img.ymatou.com/G02/M09/F6/46/CgvUA1ea-EyALJ_TAAARdBJsxxk520_o.png"></p>
+									<p class="bl-name">玖熙</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="11186" module_index="" brandid="11186" title="科迪斯">
+									<p class="bl-img"><img alt="科迪斯" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F5/BF/CgvUBVea-FKAVcisAAA0cjf4Euk941_o.png"></p>
+									<p class="bl-name">科迪斯</p>
+								</a>
+			</div><div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13204" module_index="" brandid="13204" title="罗杰维维亚">
+									<p class="bl-img"><img alt="罗杰维维亚" class="lazy" src="http://pc1.img.ymatou.com/G02/M09/F6/46/CgvUA1ea-F-AR4QaAAAogRr9xoE847_o.png"></p>
+									<p class="bl-name">罗杰维维亚</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10125" module_index="" brandid="10125" title="芬迪">
+									<p class="bl-img"><img alt="芬迪" class="lazy" src="http://pc1.img.ymatou.com/G02/M0B/F5/C0/CgvUBVea-GKAa4rgAAALBMhe91o299_o.png"></p>
+									<p class="bl-name">芬迪</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10236" module_index="" brandid="10236" title="华伦天奴">
+									<p class="bl-img"><img alt="华伦天奴" class="lazy" src="http://pc1.img.ymatou.com/G02/M02/F6/46/CgvUA1ea-GaAU7DdAAAXaW3Q3w8520_o.png"></p>
+									<p class="bl-name">华伦天奴</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10256" module_index="" brandid="10256" title="史蒂夫•马登">
+									<p class="bl-img"><img alt="史蒂夫•马登" class="lazy" src="http://pc1.img.ymatou.com/G02/M02/F5/C0/CgvUBVea-GqAf8ajAABsaQ41w-I796_o.png"></p>
+									<p class="bl-name">史蒂夫•马登</p>
+								</a>
+			</div>				</div>
+							<div class="bl-item-ft">美鞋</div>
+						</div>
+						<div class="bl-item">
+							<span class="bl-prev"><i class="home-icon hi-prev-small"></i></span>
+							<span class="bl-next"><i class="home-icon hi-next-small"></i></span>
+							<div class="bl-item-bd slide-content">
+			<div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13540" module_index="" brandid="13540" title="SK-II">
+									<p class="bl-img"><img alt="SK-II" class="lazy" src="http://pc1.img.ymatou.com/G02/M04/F4/3A/CgvUBFea1U2AEUNXAABELrCH8Hc248_o.png"></p>
+									<p class="bl-name">SK-II</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="21280" module_index="" brandid="21280" title="肌肤之钥">
+									<p class="bl-img"><img alt="肌肤之钥" class="lazy" src="http://pc1.img.ymatou.com/G02/M04/F5/0E/CgvUA1ea1VOAL2YVAABsk_ocbI4013_o.png"></p>
+									<p class="bl-name">肌肤之钥</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13651" module_index="" brandid="13651" title="黛珂">
+									<p class="bl-img"><img alt="黛珂" class="lazy" src="http://pc1.img.ymatou.com/G02/M04/F4/3A/CgvUBFea1VuAXPBgAAAWn1Noj0k964_o.png"></p>
+									<p class="bl-name">黛珂</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="10213" module_index="" brandid="10213" title="资生堂">
+									<p class="bl-img"><img alt="资生堂" class="lazy" src="http://pc1.img.ymatou.com/G02/M09/F5/14/CgvUA1ea1pKAF0IlAAFrDr6OQYk629_o.png"></p>
+									<p class="bl-name">资生堂</p>
+								</a>
+			</div><div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13518" module_index="" brandid="13518" title="高丝">
+									<p class="bl-img"><img alt="高丝" class="lazy" src="http://pc1.img.ymatou.com/G02/M07/F4/83/CgvUBVea1dOAaozZAAFrDoTwHAM420_o.png"></p>
+									<p class="bl-name">高丝</p>
+								</a>
+								<a href="//www.ymatou.com/brand/芳珂/13507" target="_blank" data-id="13507" module_index="" brandid="13507" title="芳珂">
+									<p class="bl-img"><img alt="芳珂" class="lazy" src="http://pc1.img.ymatou.com/G02/M04/F4/3B/CgvUBFea1WaAamcGAAAhs4XOc7E352_o.png"></p>
+									<p class="bl-name">芳珂</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13650" module_index="" brandid="13650" title="奥尔滨">
+									<p class="bl-img"><img alt="奥尔滨" class="lazy" src="http://pc1.img.ymatou.com/G02/M04/F5/0E/CgvUA1ea1V-AMttJAAAWaMsg3fs917_o.png"></p>
+									<p class="bl-name">奥尔滨</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13515" module_index="" brandid="13515" title="嘉娜宝">
+									<p class="bl-img"><img alt="嘉娜宝" class="lazy" src="http://pc1.img.ymatou.com/G02/M06/F4/3B/CgvUBFea1Y6AZchCAAALrkLezUQ589_o.png"></p>
+									<p class="bl-name">嘉娜宝</p>
+								</a>
+			</div>				</div>
+							<div class="bl-item-ft">日本药妆</div>
+						</div>
+						<div class="bl-item">
+							<span class="bl-prev"><i class="home-icon hi-prev-small"></i></span>
+							<span class="bl-next"><i class="home-icon hi-next-small"></i></span>
+							<div class="bl-item-bd slide-content">
+			<div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="14473" module_index="" brandid="14473" title="后">
+									<p class="bl-img"><img alt="后" class="lazy" src="http://pc1.img.ymatou.com/G02/M06/F4/8D/CgvUBVea14mAJGC4AAAbCzZjd7A225_o.png"></p>
+									<p class="bl-name">后</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13863" module_index="" brandid="13863" title="雪花秀">
+									<p class="bl-img"><img alt="雪花秀" class="lazy" src="http://pc1.img.ymatou.com/G02/M06/F4/8D/CgvUBVea146APJ9lAAAeSno8t0c369_o.png"></p>
+									<p class="bl-name">雪花秀</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="14472" module_index="" brandid="14472" title="呼吸">
+									<p class="bl-img"><img alt="呼吸" class="lazy" src="http://pc1.img.ymatou.com/G02/M04/F4/47/CgvUBFea15CAUs_3AAAadCTtGgI049_o.png"></p>
+									<p class="bl-name">呼吸</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="14469" module_index="" brandid="14469" title="伊思">
+									<p class="bl-img"><img alt="伊思" class="lazy" src="http://pc1.img.ymatou.com/G02/M04/F4/47/CgvUBFea15WABRfRAAAVzttcX4M180_o.png"></p>
+									<p class="bl-name">伊思</p>
+								</a>
+			</div><div>					<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13868" module_index="" brandid="13868" title="赫拉">
+									<p class="bl-img"><img alt="赫拉" class="lazy" src="http://pc1.img.ymatou.com/G02/M08/F4/47/CgvUBFea15qAUHT9AAAWZQA6iXM656_o.png"></p>
+									<p class="bl-name">赫拉</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="15632" module_index="" brandid="15632" title="兰芝">
+									<p class="bl-img"><img alt="兰芝" class="lazy" src="http://pc1.img.ymatou.com/G02/M01/F4/8D/CgvUBVea152AHtmOAAAKUW2m1kA432_o.png"></p>
+									<p class="bl-name">兰芝</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13557" module_index="" brandid="13557" title="悦诗风吟">
+									<p class="bl-img"><img alt="悦诗风吟" class="lazy" src="http://pc1.img.ymatou.com/G02/M03/F5/1D/CgvUA1ea2A2AJquJAABoUcciJvc189_o.png"></p>
+									<p class="bl-name">悦诗风吟</p>
+								</a>
+								<a href="http://localhost:9999/html/detail.html" target="_blank" data-id="13866" module_index="" brandid="13866" title="梦妆">
+									<p class="bl-img"><img alt="梦妆" class="lazy" src="http://pc1.img.ymatou.com/G02/M01/F5/1A/CgvUA1ea16qAFMIUAAAbF5Bl-9g981_o.png"></p>
+									<p class="bl-name">梦妆</p>
+								</a>
+			</div>				</div>
+							<div class="bl-item-ft">韩式护肤</div>
+						</div>
+					</div>
+				<!--品牌list end-->
+			</div>
+		</div>
+		<!-- 热卖地 -->
+		<div class="mod mod-hot-site" module_name="hot_area">
+			<div class="mod-hd">
+				<i class="home-icon hi-hot-site"></i><span class="title">热卖地</span>
+			</div>
+			<div class="mod-bd">
+				<div class="hot-site-list">
+					<a href="http://localhost:9999/html/detail.html" target="_blank" title="北美热卖品牌：Calvin Klein、Canada Goose、Clarks、Coach、Estee Lauder、Fresh、GNC、Kate Spade、NikeNine West" class="site-item beimei" countrygroup_id="1" module_index>
+						<i class="home-icon hi-beimei"></i>
+					</a>
+					<a href="http://localhost:9999/html/detail.html" target="_blank"  title="欧洲：欧洲热卖品牌：Bottega Veneta、Burberry、Fendi、Ferragamo、Furla、GUCCI、Kenzo、Lancome、Louis Vuitton、MiuMiu" class="site-item ouzhou" countrygroup_id="2" module_index>
+						<i class="home-icon hi-ouzhou"></i>
+					</a>
+					<a href="http://localhost:9999/html/detail.html" target="_blank"  title="亚洲：亚洲热卖品牌：Fancel、Hera、Innisfree、It's skin、KOBAYSHI、Laneige、Pola、Refa Carat、Shiseido、WHOO " class="site-item yazhou" countrygroup_id="3" module_index>
+						<i class="home-icon hi-yazhou"></i>
+					</a>
+					<a href="http://localhost:9999/html/detail.html" target="_blank"  title="澳新热卖品牌：Aptamil、Bioisland、CHACOE、Devondale、Goat、Healthy Care、Hydrodol、Olive oil skin care、Ozlamb UGG、Pandora" class="site-item aoxin" countrygroup_id="4" module_index>
+						<i class="home-icon hi-aoxin"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!--凑热闹-->
+		
+
+		
+		
+
+
+
+		<!--猜你喜欢-->
+		<div class="mod mod-like" id="guessProduct" module_name="maybe_like_list">
+				<div class="mod-hd">
+					<i class="home-icon hi-like"></i><span class="title">猜你喜欢</span>
+				</div>
+
+
+				<div class="mod-bd">
+					<ul id="asd" class="product-list">
+							
+					
+					</ul>
+				</div>
+
+
+		
+		</div>
+
+
+
+
+
+
+		<!--猜你喜欢 ---------------------------------------------------end  >> -->
+		<div class="loading-more" sub_module_name="load_more" module_index module_name="maybe_like_list" id="btn">点击加载更多</div>
+		<!--刷完了-->
+		<div class="loading-end"><span class="title">刷完了</span></div>
+	</div>
+</div>
+
+
+
+<div class="wrapper footer" module_name="user_guarantee">
+    <div class="matou-server" style="padding:10px 0;height:60px">
+        <a class="matou-server-link" style="color:#fff;" href="" target="_blank">
+            <img src="data:image/png;base64,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">
+        </a>
+    </div>
+    <div class="area">
+        <div id="bottom_list" class="bottom_list">
+            <ul class="dl">
+                <li class="dt">购物指南</li>
+                <li><a href="" target="_blank" rel="nofollow">注册与登录</a></li>
+                <li><a href="" target="_blank" rel="nofollow">账户信息维护</a></li>
+                <li><a href="" target="_blank" rel="nofollow">购物流程</a></li>
+                <li><a href="" target="_blank" rel="nofollow">会员体系</a></li>
+                <li><a href=""" target="_blank" rel="nofollow">常见问题</a></li>
+            </ul>
+            <ul class="dl">
+                <li class="dt">订单服务</li>
+                <li><a href="#" target="_blank" rel="nofollow">订单状态说明</a></li>
+                <li><a href="#" target="_blank" rel="nofollow">上传身份证</a></li>
+            </ul>
+            <ul class="dl">
+                <li class="dt">支付与配送</li>
+                <li><a href="#" target="_blank" rel="nofollow">支付方式</a></li>
+                <li><a href="#" target="_blank" rel="nofollow">优惠券和红包</a></li>
+                <li><a href="#" target="_blank" rel="nofollow">如何提现</a></li>
+                <li><a href="#" target="_blank" rel="nofollow">配送方式</a></li>
+            </ul>
+            <ul class="dl">
+                <li class="dt">售后服务</li>
+                <li><a href="#" target="_blank">消费维权</a></li>
+                <li><a href="#" target="_blank">纠纷处理规则</a></li>
+                <li><a href="#" target="_blank">退货规则</a></li>
+            </ul>
+            <div class="dl last">
+                <div class="dt">官方微信</div>
+                <p>
+                    <img src="picture/weixin2d-new.png" class="img">
+                </p>
+                <span class="weibobox">
+                    <a href="#" target="_blank">关注微博</a>
+                    <a href="#" target="_blank"><span class="ico-weibo-png"></span></a>
+                </span>
+            </div>
+        </div>
+        <div class="matou-intro">
+            <a href="#" target="_blank" rel="nofollow">关于码头</a>
+            <a href="#" target="_blank" rel="nofollow">码头招聘</a>
+            <a href="#" target="_blank">网站地图</a>
+            <a href="#" target="_blank" rel="nofollow">所有帮助</a>
+            <a href="#" target="_blank" rel="nofollow">海外招商中心</a>
+            <a href="#" target="_blank" rel="nofollow">扫货买手规则</a>
+            <a class="last" href="#" target="_blank" rel="nofollow">卖家常见问题</a>
+        </div>
+        <ul class="matou-link">
+            <a href="#" target="_blank">55bbs我爱购物网</a>
+            <a href="#" target="_blank">篱笆网</a>
+            <a href="#" target="_blank">闺蜜网</a>
+            <a href="#" target="_blank">名品导购网</a>
+            <a href="#" target="_blank">瑞丽女性网</a>
+            <a href="#" target="_blank">起点中文网</a>
+            <a href="#" target="_blank">起点女生网</a>
+            <a href="#" target="_blank">酷6网</a>
+            <a href="#" target="_blank">太平洋返利网</a>
+            <a href="#" target="_blank">海外折扣拼团</a>
+            <a href="#" target="_blank">韩都衣舍</a>
+            <a href="#" target="_blank">嘉年乐</a>
+            <a href="#" target="_blank">为为网购商城</a>
+            <a href="#" target="_blank">同城购物网</a>
+            <a href="#" target="_blank">齐家网</a>
+            <a href="#" target="_blank">网上商城</a>
+            <a href="#" target="_blank">礼品公司</a>
+            <a href="#" target="_blank">留学服务中心</a>
+            <a href="#" target="_blank">礼派</a>
+            <a href="#" target="_blank">快易拍</a>
+            <a href="#" target="_blank">手表</a>
+            <a href="#" target="_blank">卡当创意礼物</a>
+            <a href="#" target="_blank">户外装备</a>
+            <a href="#" target="_blank">母婴展</a>
+            <a href="#" target="_blank">微财富理财</a>
+            <a href="#" target="_blank" class="bo">更多&gt;&gt;</a>
+        </ul>
+        <div class="friendLinks">
+            <a id="___szfw_logo___" href="https://credit.szfw.org/CX20150828011121560680.html" target="_blank" class="linkitem icon-kexin" rel="nofollow"></a>
+            <a class="linkitem icon-chengxin" target="_blank" rel="nofollow" href="http://www.ectrustprc.org.cn/certificate.id/certificateb.php?id=20042484"></a>
+            <span class="linkitem icon-zhifubao" title="支付宝特约商户"></span>
+            <a class="linkitem icon-wangjing" href="http://www.zx110.org/" target="_blank" rel="nofollow"></a>
+        <a class="linkitem icon-gongshang2" href="http://shwg.dianping.com" target="_blank" rel="nofollow"></a></div>
+        <div id="copywrite" class="copywrite copyright">
+            © 2009－2019 ymatou.com, All rights reserved 增值电信业务经营许可证：沪B2-20140021
+            <font color="white">17 </font>
+            <br><a href="http://www.beian.miit.gov.cn" target="_blank">上海洋码头网络技术有限公司  版权所有 备案号（ 沪ICP备11050082号 ）</a>
+            <br>上海市静安区江场三路93号13层
+        </div>
+        <div class="friendLinks2">
+            <div class="friendLinks" style="float: left;width: 66px;"><a class="linkitem icon-gongshang" target="_blank" href="#" target="_blank" rel="nofollow"></a></div>
+            <a class="beian-banner"target="_blank" href="#"><i class="beian"></i><p class="beian-txt">沪公网安备 31010802001410号</p></a>
+            <span class="split">|</span>
+            <span class="link-item">违法不良信息举报电话：021-80185223</span>
+            <span class="split">|</span>
+            <a class="link-item" href="#" target="_blank">
+                <span class="jbzxIcon"></span>
+                <span>上海市互联网上海市互联网举报中心</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- 返回顶部的功能 -->
+<div class="rightbar">
+		<ul class="rightbar-inner" style="padding:550px 0 0;">
+			
+			<!-- <li class="item">
+				<i class="rightbar-icon rti-code"></i></a>
+				<div id="qrcodeContainer" style="display: none;position: absolute;top:0;left: -102px;z-index: 1;width: 102px;height: 126px;background:#383838;">
+					<img src="//pic1.ymatou.com/G02/M02/FB/5C/CgvUBFht9-CADvH8AAAW6VtgvkI439_62_63_w_o.png" title="洋码头二维码" style="width: 62px;height: 63px;display: block;margin: 10px auto;">
+					<span>下载APP领取<br>260元新人礼包</span>
+				</div>
+			</li>
+			<li class="item"> -->
+				<a style="padding-bottom: 2px;" href="" onclick="fanhuidingbu()" title="置顶"><i class="rightbar-icon rti-top"></i><span class="title">TOP</span></a>
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
+
+
+
